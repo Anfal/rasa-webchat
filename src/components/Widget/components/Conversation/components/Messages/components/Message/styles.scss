@@ -1,0 +1,51 @@
+@import "variables.scss";
+
+@import "common.scss";
+
+.#{$namespace}conversation-container {
+  
+  .#{$namespace}message {
+    margin: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    font-family: $fontfamily;
+    flex-wrap: wrap;
+  
+    .#{$namespace}markdown {
+      p {
+        margin: 0;
+      }
+    }
+  }
+  
+  .#{$namespace}client {
+    @include message-bubble($green-moh, $white);
+    background-color: $green-moh !important;
+    max-width: 85%;
+    margin-left: auto;
+    overflow-wrap: break-word;
+    a {
+      color: $green-1;
+    }
+  }
+  
+  .#{$namespace}response {
+    @include message-bubble($mid-grey, $dark-grey, 0 15px 15px 15px);
+    overflow-wrap: break-word;
+  }
+  
+  /* For markdown elements created with default styles */
+  .#{$namespace}message-text {
+    margin: 0;
+    .#{$namespace}markdown{
+      p{
+        margin-bottom: 1em;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+}
